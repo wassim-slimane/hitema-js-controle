@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    //Trouver le premier caractère non répété d'une chaine de caractères
+    const mot1 = "bonjour";
+    const mot2 = "hello henry";
+    const mot3 = "coucou";
+
+    function findNoRepeat(mot){
+        const motArray = mot.split("");
+        let result = null;
+
+        for(let index in motArray) {
+            let clone = JSON.parse(JSON.stringify(motArray));
+            clone.splice(parseInt(index), 1);
+            if (!clone.includes(motArray[index])){
+                result = motArray[index];
+                break;
+            }
+        }
+        console.log(result)
+    }
+
+    findNoRepeat(mot1);
+    findNoRepeat(mot2);
+    findNoRepeat(mot3);
+
+
+</script>
+
+</body>
+</html>
